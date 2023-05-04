@@ -1,0 +1,25 @@
+.row{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(to left, blueviolet, violet);
+}
+
+#titulos{
+    font-size:larger;
+    color:black;
+    text-shadow:blueviolet 2px 2px;
+}
+
+#listas{
+    list-style-type:square;
+}
+
+li::marker{
+    color: blueviolet;
+}
+
+h4,h6{
+    display: inline;
+}
