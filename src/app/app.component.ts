@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Proyecto from 'src/model/Proyecto';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyectoIntegrador';
-
   contenido = true;
+
 
 }

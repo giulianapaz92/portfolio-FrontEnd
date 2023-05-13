@@ -1,44 +1,29 @@
-<div>
+<div id="linkredes">
     <a href="http://www.linkedin.com" target="_blank"> <img src="../../../assets/linkedinlogo.png" alt="LinkedIn" class="rounded float-start"></a>
     <a href="http://www.instagram.com" target="_blank"> <img src="../../../assets/instagram.png" alt="Instagram" class="rounded float-start"></a>
     <a href="http://www.facebook.com" target="_blank"> <img src="../../../assets/logo-facebook.ico" alt="Facebook" class="rounded float-start"></a>
     <button id="login" (click)="visibilityForm()" type="button" class="btn btn-secondary" style="color:palevioletred;" data-bs-toggle="button">Log In</button>
 </div>
 
-<div *ngIf="element == true" id="form">
+<div *ngIf="element == true" id="form" >
     <section class=" text-center text-lg-start">
-        <style>
-          .rounded-t-5 {
-            border-top-left-radius: 0.5rem;
-            border-top-right-radius: 0.5rem;
-          }
-      
-          @media (min-width: 992px) {
-            .rounded-tr-lg-0 {
-              border-top-right-radius: 0;
-            }
-      
-            .rounded-bl-lg-5 {
-              border-bottom-left-radius: 0.5rem;
-            }
-          }
-        </style>
+        
         <div class="card mb-3">
           <div class="row g-0 d-flex align-items-center">
             
-            <div class="col-lg-8">
+            <div class="col-lg-12">
               <div class="card-body py-5 px-md-5">
       
-                <form>
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input class="form-control" type="email" id="form2Example1" formControlName="email" />
+                    <label class="form-label" for="form2Example1">Email</label>
                   </div>
       
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <input type="password" id="form2Example2" class="form-control" />
+                    <input class="form-control" type="password" id="form2Example2" formControlName="password" />
                     <label class="form-label" for="form2Example2">Password</label>
                   </div>
       
@@ -52,10 +37,11 @@
                   </div>
       
                   <!-- Submit button -->
-                  <button (click)="hiddenForm()" type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
-      
+                  <button  id="sign in" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                  <button  id="salir" type="submit" class="btn btn-primary btn-block mb-4">Salir</button>
                 </form>
-      
+
+
               </div>
             </div>
           </div>

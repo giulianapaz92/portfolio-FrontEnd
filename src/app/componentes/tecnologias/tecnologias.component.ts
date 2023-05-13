@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+import { TecnologiaService } from 'src/app/Services/tecnologia/tecnologia.service';
+import Tecnologia from 'src/model/Tecnologia';
 
 @Component({
   selector: 'app-tecnologias',
@@ -6,5 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./tecnologias.component.scss']
 })
 export class TecnologiasComponent {
+
+    tecnologias: Tecnologia[] = [];
+    constructor(
+      private ts: TecnologiaService
+    ) {}
+
+
+   async ngOnInit(){ 
+    this.tecnologias = await this.ts.getTecnologias();
+    console.log("Respuesta tecnologias: " + this.tecnologias)
+   }
 
 }
