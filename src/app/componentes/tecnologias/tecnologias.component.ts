@@ -13,6 +13,7 @@ export class TecnologiasComponent {
     mostrarContenido = false;
     mostrarForm = false;
     idTecnologia = 0;
+    validacion = false;
 
     tecnologias: Tecnologia[] = [];
     constructor(
@@ -45,11 +46,16 @@ export class TecnologiasComponent {
 
    ocultarFormEditar(){
     this.mostrarForm = false;
+    this.validacion = false;
    }
 
    onSubmit(id: number){
     const nombre = this.tecForm.value.nombre;
     const nivel = this.tecForm.value.nivel;
+    if(nombre === "" || nivel === ""){
+      this.validacion = true;
+      return;
+    }
     this.ts.editar(id, nombre, nivel)
     window.location.reload();
   }

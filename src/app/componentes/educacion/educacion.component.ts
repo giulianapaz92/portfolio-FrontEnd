@@ -13,6 +13,7 @@ export class EducacionComponent {
   mostrarContenido = false;
   mostrarForm = false;
   idEducacion = 0;
+  validacion = false;
 
   estudios: Educacion[] = [];
   constructor(
@@ -48,6 +49,7 @@ export class EducacionComponent {
 
   ocultarFormEditar(){
     this.mostrarForm = false
+    this.validacion = false;
   }
 
   async onSubmit(id: number){
@@ -56,8 +58,12 @@ export class EducacionComponent {
     const fechaDesde = this.eduForm.value.fechaDesde;
     const fechaHasta = this.eduForm.value.fechaHasta;
     const titulo = this.eduForm.value.titulo;
-    await this.es.editar(id, nombre, estado, fechaDesde, fechaHasta, titulo)
 
+    if(nombre === "" || fechaDesde === "" || fechaHasta === "" || estado === "" || titulo === ""){
+      this.validacion = true;
+      return;
+    }
+    await this.es.editar(id, nombre, estado, fechaDesde, fechaHasta, titulo)
     window.location.reload();
   }
 
