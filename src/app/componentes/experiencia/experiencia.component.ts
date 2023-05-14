@@ -38,8 +38,8 @@ export class ExperienciaComponent {
   }
  }
 
-  eliminarExp(id: number){
-    this.xs.eliminar(id)
+  async eliminarExp(id: number){
+    await this.xs.eliminar(id)
     window.location.reload();
   }
   

@@ -33,8 +33,8 @@ export class TecnologiasComponent {
     }
    }
 
-   eliminarTec(id: number){
-      this.ts.eliminar(id);
+   async eliminarTec(id: number){
+      await this.ts.eliminar(id);
       window.location.reload();
    }
 

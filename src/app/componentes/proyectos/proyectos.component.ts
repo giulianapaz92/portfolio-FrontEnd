@@ -33,8 +33,8 @@ export class ProyectosComponent {
   }
  }
 
- eliminarPro(id: number){
-  this.ps.eliminar(id)
+ async eliminarPro(id: number){
+  await this.ps.eliminar(id)
   window.location.reload();
  }
 
