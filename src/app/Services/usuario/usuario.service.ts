@@ -7,8 +7,8 @@ import Usuario from '../../../model/Usuario';
 })
 export class UsuarioService {
 
-  //uri = "https://portfolio-backend-gyt8.onrender.com/usuario";
-  uri = 'http://localhost:8080/usuario';
+  uri = "https://portfolio-backend-gyt8.onrender.com/usuario";
+  //uri = 'http://localhost:8080/usuario';
 
   constructor(private http: HttpClient) { }
 

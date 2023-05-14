@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ExperienciaService {
 
-  //uri = "https://portfolio-backend-gyt8.onrender.com/experiencia";
-  uri = "http://localhost:8080/experiencia";
+  uri = "https://portfolio-backend-gyt8.onrender.com/experiencia";
+  //uri = "http://localhost:8080/experiencia";
 
   constructor(private http: HttpClient) { }
 
