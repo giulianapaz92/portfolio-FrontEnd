@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProyectoService {
 
+  //uri = "https://portfolio-backend-gyt8.onrender.com/proyecto";
   uri = "http://localhost:8080/proyecto";
 
   constructor(private http: HttpClient) { }

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TecnologiaService {
 
+  //uri = "https://portfolio-backend-gyt8.onrender.com/tecnologia";
   uri = "http://localhost:8080/tecnologia";
 
   constructor(private http: HttpClient) { }
