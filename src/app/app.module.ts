@@ -12,6 +12,17 @@ import { ExperienciaComponent } from './componentes/experiencia/experiencia.comp
 import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { AccesoComponent } from './componentes/acceso/acceso.component';
+import { TecnologiasComponent } from './componentes/tecnologias/tecnologias.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+import { ProyectoService } from './Services/proyecto/proyecto.service';
+import { TecnologiaService } from './Services/tecnologia/tecnologia.service';
+import { EducacionService } from './Services/educacion/educacion.service';
+import { ExperienciaService } from './Services/experiencia/experiencia.service';
+import { UsuarioService } from './Services/usuario/usuario.service';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +35,24 @@ import { AccesoComponent } from './componentes/acceso/acceso.component';
     ExperienciaComponent,
     SkillsComponent,
     ProyectosComponent,
-    AccesoComponent
+    AccesoComponent,
+    TecnologiasComponent,
+    EducacionComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
+
   ],
-  providers: [],
+  providers: [
+    ProyectoService,
+    TecnologiaService,
+    EducacionService,
+    ExperienciaService,
+    UsuarioService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

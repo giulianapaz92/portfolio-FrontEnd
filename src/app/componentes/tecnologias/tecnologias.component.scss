@@ -3,13 +3,14 @@
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, blueviolet, violet);
+    background: linear-gradient(to left, #FF8000, white);
 }
+
 
 #titulos{
     font-size:larger;
     color:black;
-    text-shadow:blueviolet 2px 2px;
+    text-shadow:orange 2px 2px;
 }
 
 #listas{
@@ -27,10 +28,8 @@ h4,h6{
 button{
     margin-left: 5px;
     float:right;
-    margin-top: 5px;
 }
 
 #campos{
     margin-bottom: 5px;
-    
 }

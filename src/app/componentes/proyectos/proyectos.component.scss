@@ -7,6 +7,29 @@ h4, h6{
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, #38bd96, white);
+    background: linear-gradient(to left, #FF8000, white);
 }
 
+
+#titulos{
+    font-size:larger;
+    color:black;
+    text-shadow:orange 2px 2px;
+}
+
+#listas{
+    list-style-type:square;
+}
+
+li::marker{
+    color: blueviolet;
+}
+
+button{
+    margin-left: 5px;
+    float:right;
+}
+
+#campos{
+    margin-bottom: 5px;
+}

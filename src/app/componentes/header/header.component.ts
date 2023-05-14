@@ -7,6 +7,6 @@ import { LogoHeaderComponent } from '../logo-header/logo-header.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-
+  
 }
 
