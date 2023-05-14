@@ -1,4 +1,4 @@
-h4, h6{
+h4,h6{
     display: inline;
 }
 
@@ -40,4 +40,10 @@ button{
 
 ::placeholder {
     font-style: italic;
+}
+
+li{
+    font-family: Segoe UI Symbol;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

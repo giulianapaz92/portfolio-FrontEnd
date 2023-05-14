@@ -1,3 +1,8 @@
+h4,h5,h6, button{
+    display: inline;
+}
+
+
 .row{
     margin-left: 20px;
     margin-right: 20px;
@@ -21,23 +26,23 @@ li::marker{
     color: blueviolet;
 }
 
-h4,h6,button{
-    display: inline;
-}
-
-button{
-    margin-left: 5px;
-    float:right;
-}
 
 #campos{
     margin-bottom: 5px;
 }
 
 #editareliminar{
-    margin-bottom: 10px;
+    float: right;
+    margin-right: 5px;
 }
 
 ::placeholder {
     font-style: italic;
+}
+
+li{
+    font-family: Segoe UI Symbol;
+    margin-bottom: 30px;
+    margin-top: 15px;
+
 }
