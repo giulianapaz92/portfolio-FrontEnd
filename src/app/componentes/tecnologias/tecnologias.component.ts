@@ -25,4 +25,9 @@ export class TecnologiasComponent {
     }
    }
 
+   eliminarTec(id: number){
+      this.ts.eliminar(id);
+      window.location.reload();
+   }
+
 }

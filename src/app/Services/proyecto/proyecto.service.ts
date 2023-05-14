@@ -13,7 +13,7 @@ export class ProyectoService {
 
   async eliminar(id:any) {
     let dataToReturn = "Eliminada";
-    await this.http.delete(`${this.uri}/eliminar/${id}}`).toPromise()
+    await this.http.delete(`${this.uri}/eliminar/${id}`).toPromise()
         .then(data => {
            console.log("Proyecto eliminado con el id: " + id);
         });

@@ -25,4 +25,9 @@ export class EducacionComponent {
   }
  }
 
+  eliminarEst(id: number){
+    this.es.eliminar(id)
+    window.location.reload();
+  }
+
 }

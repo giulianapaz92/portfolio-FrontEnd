@@ -24,4 +24,10 @@ export class ProyectosComponent {
     this.mostrarContenido = true  
   }
  }
+
+ eliminarPro(id: number){
+  this.ps.eliminar(id)
+  window.location.reload();
+ }
+
 }
