@@ -9,6 +9,8 @@ import Tecnologia from 'src/model/Tecnologia';
 })
 export class TecnologiasComponent {
 
+    mostrarContenido = false;
+
     tecnologias: Tecnologia[] = [];
     constructor(
       private ts: TecnologiaService
@@ -18,6 +20,9 @@ export class TecnologiasComponent {
    async ngOnInit(){ 
     this.tecnologias = await this.ts.getTecnologias();
     console.log("Respuesta tecnologias: " + this.tecnologias)
+    if (localStorage.getItem("active") === "mostrar") {
+      this.mostrarContenido = true  
+    }
    }
 
 }

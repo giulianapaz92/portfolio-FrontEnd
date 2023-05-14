@@ -7,7 +7,10 @@ import Experiencia from 'src/model/Experiencia';
   templateUrl: './experiencia.component.html',
   styleUrls: ['./experiencia.component.scss']
 })
+
 export class ExperienciaComponent {
+
+  mostrarContenido = false;
 
   experiencias: Experiencia[] = [];
   constructor(
@@ -18,6 +21,12 @@ export class ExperienciaComponent {
  async ngOnInit(){ 
   this.experiencias = await this.xs.getExperiencias();
   console.log("Respuesta experiencias: " + this.experiencias)
+  if (localStorage.getItem("active") === "mostrar") {
+    this.mostrarContenido = true  
+  }
  }
+
+  
+  
 
 }

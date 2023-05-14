@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AcercademiComponent {
 
+  mostrarContenido = false;
+  
+  async ngOnInit(){
+    if (localStorage.getItem("active") === "mostrar") {
+      this.mostrarContenido = true  
+    }
+   }
 }

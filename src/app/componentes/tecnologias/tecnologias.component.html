@@ -4,7 +4,7 @@
         
     </div>
 
-    <div>
+    <div *ngIf="mostrarContenido">
         <ul id="listas">
           <li *ngFor="let tecnologia of tecnologias"> <h5>{{tecnologia.nombre}}</h5> <h6>Nivel: {{tecnologia.nivel}}</h6>
             <button type="button" class="btn btn-primary" >
@@ -22,7 +22,7 @@
           </li>
         </ul>
     </div>
-    <form class="visible">
+    <form *ngIf="false">
         <div class="form-row">
           <div class="col">
             <input id="campos" type="text" class="form-control">

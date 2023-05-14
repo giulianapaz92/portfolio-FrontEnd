@@ -3,7 +3,7 @@
         <h2 id="titulos">Proyectos</h2>
     </div>
 
-    <div>
+    <div *ngIf="mostrarContenido">
         <ul>
           <li *ngFor="let proyecto of proyectos"> <h5>{{proyecto.nombre}}</h5> <h6>Descripcion: {{proyecto.descripcion}}</h6>
             <button type="button" class="btn btn-primary" >
@@ -21,7 +21,7 @@
           </li>
         </ul>
     </div>
-    <form class="visible">
+    <form *ngIf="false">
         <div class="form-row">
           <div class="col">
             <input id="campos" type="text" class="form-control">

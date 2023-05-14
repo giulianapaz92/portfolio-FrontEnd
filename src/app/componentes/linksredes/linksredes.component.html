@@ -2,10 +2,12 @@
     <a href="http://www.linkedin.com" target="_blank"> <img src="../../../assets/linkedinlogo.png" alt="LinkedIn" class="rounded float-start"></a>
     <a href="http://www.instagram.com" target="_blank"> <img src="../../../assets/instagram.png" alt="Instagram" class="rounded float-start"></a>
     <a href="http://www.facebook.com" target="_blank"> <img src="../../../assets/logo-facebook.ico" alt="Facebook" class="rounded float-start"></a>
-    <button id="login" (click)="visibilityForm()" type="button" class="btn btn-secondary" style="color:palevioletred;" data-bs-toggle="button">Log In</button>
+    <button *ngIf="verBoton" (click)="abrirFormLogin()" id="login" type="button" class="btn btn-dark" style="color:palevioletred;" data-bs-toggle="button">Log In</button>
+    <button (click)="logOut()" type="button" class="btn btn-dark">Log Out</button>
+
 </div>
 
-<div *ngIf="element == true" id="form" >
+<div *ngIf="formLogin" id="form"  >
     <section class=" text-center text-lg-start">
         
         <div class="card mb-3">
@@ -37,10 +39,12 @@
                   </div>
       
                   <!-- Submit button -->
-                  <button  id="sign in" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-                  <button  id="salir" type="submit" class="btn btn-primary btn-block mb-4">Salir</button>
+                  <button id="sign in" type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+                  <button (click)="cerrarLogin()" id="salir" type="submit" class="btn btn-primary btn-block mb-4">Salir</button>
                 </form>
-
+                <div *ngIf="errorLogin" class="alert alert-danger" role="alert">
+                  Error de credenciales
+                </div>
 
               </div>
             </div>

@@ -39,6 +39,12 @@ export class LinksredesComponent {
      }
 
   element = false;
+  errorLogin = false;
+  formLogin = false;
+  cerrarFormLogin = false;
+  mostrarContenido = true;
+  verBoton = true;
+
   visibilityForm(){  
         return (this.element = true);
   }
@@ -61,12 +67,29 @@ export class LinksredesComponent {
 
     if(user){
       console.log("Login ok")
-           
+      this.errorLogin = false
+      this.formLogin = false
+      localStorage.setItem("active", "mostrar")
+      window.location.reload();
+     
+      this.verBoton = false
      }else{
       // error de login/credenciales
-      console.log("usuario o password incorrectos")
-      }
+      this.errorLogin = true  
+    }
 
     }
 
+    abrirFormLogin(){
+      this.formLogin = true
+    }
+
+    cerrarLogin(){
+      this.formLogin = false
+    }
+
+    logOut(){
+      localStorage.removeItem("active");
+      window.location.reload();
+    }
 }

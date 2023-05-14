@@ -9,6 +9,8 @@ import Proyecto from 'src/model/Proyecto';
 })
 export class ProyectosComponent {
 
+  mostrarContenido = false;
+
   proyectos: Proyecto[] = [];
   constructor(
     private ps: ProyectoService
@@ -18,5 +20,8 @@ export class ProyectosComponent {
  async ngOnInit(){ 
   this.proyectos = await this.ps.getProyectos();
   console.log("Respuesta proyectos: " + this.proyectos)
+  if (localStorage.getItem("active") === "mostrar") {
+    this.mostrarContenido = true  
+  }
  }
 }

@@ -9,6 +9,8 @@ import Educacion from 'src/model/Educacion';
 })
 export class EducacionComponent {
     
+  mostrarContenido = false;
+
   estudios: Educacion[] = [];
   constructor(
     private es: EducacionService
@@ -18,6 +20,9 @@ export class EducacionComponent {
  async ngOnInit(){ 
   this.estudios = await this.es.getEstudios();
   console.log("Respuesta estudios: " + this.estudios)
+  if (localStorage.getItem("active") === "mostrar") {
+    this.mostrarContenido = true  
+  }
  }
 
 }

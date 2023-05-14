@@ -3,7 +3,7 @@
         <h2 id="titulos">Formacion</h2>
     </div>
 
-    <div>
+    <div *ngIf="mostrarContenido">
         <ul id="listas">
             <li *ngFor="let estudio of estudios"><h5>{{estudio.nombre}}</h5> <h6>Estado: {{estudio.estado}}. </h6> <h6> Periodo: desde {{estudio.fechaDesde}} hasta {{estudio.fechaHasta}}. </h6> <h6> Titulo obtenido: {{estudio.titulo}}</h6>
               <button type="button" class="btn btn-primary" >
@@ -22,7 +22,7 @@
     </div>
 
     <div>
-        <form class="visible">
+        <form *ngIf="false">
             <div class="form-group">
               <label for="exampleFormControlInput1">Nombre</label>
               <input type="email" class="form-control" id="exampleFormControlInput1">

@@ -1,9 +1,8 @@
-<div class="row">
+<div class="row" >
     <div class="col-md-6">
         <h2 id="titulos">Experiencia Laboral</h2>
     </div>
-
-    <div>
+      <div *ngIf="mostrarContenido">
         <ul id="listas">
           <li *ngFor="let experiencia of experiencias"><h5>{{experiencia.empresa}}</h5> <h6>Puesto: {{experiencia.puesto}}. </h6> <h6> Periodo: Desde {{experiencia.fechaDesde}} hasta {{experiencia.fechaHasta}}. </h6> <h6> Descripción: {{experiencia.descripcion}}</h6>
              <button type="button" class="btn btn-primary" >
@@ -20,10 +19,10 @@
             </button>
           </li>
         </ul>
-    </div>
+      </div>
 
-    <div>
-    <form class="visible">
+<div *ngIf="false">
+    <form>
         <div class="form-group">
           <label for="exampleFormControlInput1">Empresa</label>
           <input type="text" class="form-control" id="exampleFormControlInput1">
