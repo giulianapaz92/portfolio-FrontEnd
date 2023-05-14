@@ -39,3 +39,7 @@ button{
 #editareliminar{
     margin-bottom: 5px;
 }
+
+::placeholder {
+    font-style: italic;
+}

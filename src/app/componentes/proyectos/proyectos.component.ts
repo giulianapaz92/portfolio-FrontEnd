@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProyectoService } from 'src/app/Services/proyecto/proyecto.service';
 import Proyecto from 'src/model/Proyecto';
 
@@ -10,11 +11,18 @@ import Proyecto from 'src/model/Proyecto';
 export class ProyectosComponent {
 
   mostrarContenido = false;
+  mostrarForm = false;
+  idProyecto = 0;
 
   proyectos: Proyecto[] = [];
   constructor(
     private ps: ProyectoService
   ) {}
+
+  proyForm = new FormGroup({
+    nombre: new FormControl('', Validators.required),
+    descripcion: new FormControl('', Validators.required),
+    })
 
 
  async ngOnInit(){ 
@@ -29,5 +37,22 @@ export class ProyectosComponent {
   this.ps.eliminar(id)
   window.location.reload();
  }
+
+ mostrarFormEditar(id: number){
+  this.mostrarForm = true;
+  this.idProyecto = id;
+ }
+
+ ocultarFormEditar(){
+  this.mostrarForm = false;
+ }
+
+ onSubmit(id: number){
+  const nombre = this.proyForm.value.nombre;
+  const descripcion = this.proyForm.value.descripcion;
+  this.ps.editar(id, nombre, descripcion)
+  window.location.reload();
+}
+
 
 }

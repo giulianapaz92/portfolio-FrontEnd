@@ -5,7 +5,7 @@
       <div *ngIf="mostrarContenido">
         <ul id="listas">
           <li *ngFor="let experiencia of experiencias"><h5>{{experiencia.empresa}}</h5> <h6>Puesto: {{experiencia.puesto}}. </h6> <h6> Periodo: Desde {{experiencia.fechaDesde}} hasta {{experiencia.fechaHasta}}. </h6> <h6> Descripción: {{experiencia.descripcion}}</h6>
-             <button type="button" class="btn btn-primary" id="editareliminar">
+             <button (click)="mostrarFormEditar(experiencia.id)" type="button" class="btn btn-primary" id="editareliminar" >
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16" class="bi bi-pencil-square">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -21,27 +21,27 @@
         </ul>
       </div>
 
-<div *ngIf="false">
-    <form>
+<div *ngIf="mostrarForm">
+    <form [formGroup]="expForm" (ngSubmit)="onSubmit(idExperiencia)">
         <div class="form-group">
           <label for="exampleFormControlInput1">Empresa</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1">
+          <input formControlName="empresa" placeholder="Nombre de la empresa" type="text" class="form-control" id="exampleFormControlInput1">
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Puesto</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1">
+          <input formControlName="puesto" placeholder="Puesto ocupado" type="text" class="form-control" id="exampleFormControlInput1">
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect2">Periodo</label><br>
-          <input type="date" class="btn btn-primary"> hasta <input type="date" class="btn btn-primary">
+          Desde <input formControlName="fechaDesde" type="date" class="btn btn-primary"> hasta <input formControlName="fechaHasta" type="date" class="btn btn-primary">
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Descripcion</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1">
+          <input formControlName="descripcion" placeholder="Ingrese una breve descripcion" type="text" class="form-control" id="exampleFormControlInput1">
         </div>
 
-            <button id="campos" type="button" class="btn btn-info">Confirmar</button>
-            <button id="campos" type="button" class="btn btn-info">Cancelar</button>
+            <button id="campos" type="submit" class="btn btn-info">Confirmar</button>
+            <button (click)="ocultarFormEditar()" id="campos" type="button" class="btn btn-info">Cancelar</button>
       </form>
     </div>
 </div>

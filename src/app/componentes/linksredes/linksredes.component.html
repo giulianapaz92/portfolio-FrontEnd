@@ -19,13 +19,13 @@
                 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                   <!-- Email input -->
                   <div class="form-outline mb-4">
-                    <input class="form-control" type="email" id="form2Example1" formControlName="email" />
+                    <input class="form-control" type="email" id="form2Example1" formControlName="email" required/>
                     <label class="form-label" for="form2Example1">Email</label>
                   </div>
       
                   <!-- Password input -->
                   <div class="form-outline mb-4">
-                    <input class="form-control" type="password" id="form2Example2" formControlName="password" />
+                    <input class="form-control" type="password" id="form2Example2" formControlName="password" required/>
                     <label class="form-label" for="form2Example2">Password</label>
                   </div>
       
