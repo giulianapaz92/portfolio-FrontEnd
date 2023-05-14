@@ -36,7 +36,10 @@
             <button id="campos" type="submit" class="btn btn-info">Confirmar</button>
             <button (click)="ocultarFormEditar()" id="campos" type="button" class="btn btn-info">Cancelar</button>
       </form>
+      <label *ngIf="validacion" class="alert alert-danger" role="alert" style="margin-top: 5px;">
+        * Todos los campos son obligatorios *
+      </label>
     </div> 
-
+    
 </div>
 

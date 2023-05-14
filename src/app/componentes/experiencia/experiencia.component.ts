@@ -14,7 +14,7 @@ export class ExperienciaComponent {
   mostrarContenido = false;
   mostrarForm = false;
   idExperiencia = 0;
-
+  validacion = false;
 
   experiencias: Experiencia[] = [];
   constructor(
@@ -51,6 +51,7 @@ export class ExperienciaComponent {
 
   ocultarFormEditar(){
     this.mostrarForm = false;
+    this.validacion = false;
   }
 
   onSubmit(id: number){
@@ -59,8 +60,14 @@ export class ExperienciaComponent {
     const fechaHasta = this.expForm.value.fechaHasta;
     const puesto = this.expForm.value.puesto;
     const descripcion = this.expForm.value.descripcion;
+
+    if(empresa === "" || fechaDesde === "" || fechaHasta === "" || puesto === "" || descripcion === ""){
+      this.validacion = true;
+      return;
+    }
     this.xs.editar(id, empresa, fechaDesde, fechaHasta, puesto, descripcion)
     window.location.reload();
+
   }
 
 }

@@ -13,6 +13,7 @@ export class ProyectosComponent {
   mostrarContenido = false;
   mostrarForm = false;
   idProyecto = 0;
+  validacion = false;
 
   proyectos: Proyecto[] = [];
   constructor(
@@ -45,11 +46,17 @@ export class ProyectosComponent {
 
  ocultarFormEditar(){
   this.mostrarForm = false;
+  this.validacion = false;
  }
 
  onSubmit(id: number){
   const nombre = this.proyForm.value.nombre;
   const descripcion = this.proyForm.value.descripcion;
+
+  if(nombre === "" || descripcion === ""){
+    this.validacion = true;
+    return;
+  }
   this.ps.editar(id, nombre, descripcion)
   window.location.reload();
 }
