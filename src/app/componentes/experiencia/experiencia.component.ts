@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ExperienciaService } from 'src/app/Services/experiencia/experiencia.service';
 import Experiencia from 'src/model/Experiencia';
 
@@ -11,11 +12,22 @@ import Experiencia from 'src/model/Experiencia';
 export class ExperienciaComponent {
 
   mostrarContenido = false;
+  mostrarForm = false;
+  idExperiencia = 0;
+
 
   experiencias: Experiencia[] = [];
   constructor(
     private xs: ExperienciaService
   ) {}
+
+  expForm = new FormGroup({
+    empresa: new FormControl('', Validators.required),
+    fechaDesde: new FormControl('', Validators.required),
+    fechaHasta: new FormControl('', Validators.required),
+    puesto: new FormControl('', Validators.required),
+    descripcion: new FormControl('', Validators.required),
+    })
 
 
  async ngOnInit(){ 
@@ -26,7 +38,29 @@ export class ExperienciaComponent {
   }
  }
 
+  eliminarExp(id: number){
+    this.xs.eliminar(id)
+    window.location.reload();
+  }
   
-  
+  mostrarFormEditar(id: number){
+    this.mostrarForm = true;
+    console.log(id)
+    this.idExperiencia = id;
+  }
+
+  ocultarFormEditar(){
+    this.mostrarForm = false;
+  }
+
+  onSubmit(id: number){
+    const empresa = this.expForm.value.empresa;
+    const fechaDesde = this.expForm.value.fechaDesde;
+    const fechaHasta = this.expForm.value.fechaHasta;
+    const puesto = this.expForm.value.puesto;
+    const descripcion = this.expForm.value.descripcion;
+    this.xs.editar(id, empresa, fechaDesde, fechaHasta, puesto, descripcion)
+    window.location.reload();
+  }
 
 }
