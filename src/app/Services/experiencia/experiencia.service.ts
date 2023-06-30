@@ -34,6 +34,21 @@ export class ExperienciaService {
           console.log("Experiencia editada: " + data);
         });
     return bodyExperiencia;
+  } 
+
+  async agregar(empresa:any, fechaDesde:any, fechaHasta:any, puesto:any, descripcion:any) {
+    let bodyExperiencia = {
+        empresa: empresa,
+        fechaDesde: fechaDesde,
+        fechaHasta: fechaHasta,
+        puesto: puesto,
+        descripcion: descripcion
+    };
+    await this.http.put(`${this.uri}/editar`, bodyExperiencia).toPromise()
+        .then(data => {
+          console.log("Experiencia editada: " + data);
+        });
+    return bodyExperiencia;
   }
 
   async getExperiencias() {

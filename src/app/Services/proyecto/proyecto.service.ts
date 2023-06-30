@@ -33,6 +33,18 @@ export class ProyectoService {
     return bodyProyecto;
   }
 
+  async agregar(nombre:any, descripcion:any) {
+    let bodyProyecto = {
+        nombre: nombre,
+        descripcion: descripcion
+    };
+    await this.http.put(`${this.uri}/editar`, bodyProyecto).toPromise()
+        .then(data => {
+          console.log("Proyecto editado: " + data);
+        });
+    return bodyProyecto;
+  }
+
   async getProyectos() {
     let proyectos:any;
     await this.http.get(`${this.uri}/proyectos`).toPromise()

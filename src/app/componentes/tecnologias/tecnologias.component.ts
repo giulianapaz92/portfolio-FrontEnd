@@ -44,6 +44,10 @@ export class TecnologiasComponent {
     this.idTecnologia = id;
    }
 
+   mostrarFormAgregar(){
+    this.mostrarForm = true;
+   }
+
    ocultarFormEditar(){
     this.mostrarForm = false;
     this.validacion = false;
@@ -57,6 +61,9 @@ export class TecnologiasComponent {
       return;
     }
     this.ts.editar(id, nombre, nivel)
+    window.location.reload();
+
+    this.ts.agregar(nombre, nivel)
     window.location.reload();
   }
 
