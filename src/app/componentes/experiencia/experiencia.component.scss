@@ -3,29 +3,30 @@
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, blueviolet, violet);
+        background: linear-gradient(to left, #38bd96, #D1F2EB);
 }
 
 #titulos{
-    font-size:larger;
-    color:black;
-    text-shadow:blueviolet 2px 2px;
+    font-size:x-large;
+    color: #38bd96;
+    font-family: Verdana;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
 }
 
-#listas{
-    list-style-type:square;
-}
 
 li::marker{
-    color: blueviolet;
-}
-
-li{
-    font-family: Segoe UI Symbol;
+    color: #38bd96;
 }
 
 h4,h6{
     display: inline;
+    font-family: Calibri;
+}
+
+h5{
+    font-family: Calibri;
 }
 
 button{

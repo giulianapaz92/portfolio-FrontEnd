@@ -33,6 +33,18 @@ export class TecnologiaService {
     return bodyTecnologia;
   }
 
+  async agregar(nombre:any, nivel:any) {
+    let bodyTecnologia = {
+        nombre: nombre,
+        nivel: nivel
+    };
+    await this.http.put(`${this.uri}/editar`, bodyTecnologia).toPromise()
+        .then(data => {
+          console.log("Tecnologia editada: " + data);
+        });
+    return bodyTecnologia;
+  }
+
   async getTecnologias() {
     let tecnologias:any;
     await this.http.get(`${this.uri}/tecnologias`).toPromise()

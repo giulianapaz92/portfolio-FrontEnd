@@ -45,4 +45,20 @@ export class EducacionService {
         });
     return estudios;
   }
+
+  async agregar(nombre:any, estado:any, fechaDesde:any, fechaHasta:any, titulo:any) {
+    let bodyEstudio = {
+        nombre: nombre,
+        estado: estado,
+        fechaDesde: fechaDesde,
+        fechaHasta: fechaHasta,
+        titulo: titulo,
+    };
+    await this.http.put(`${this.uri}/editar`, bodyEstudio).toPromise()
+        .then(data => {
+          console.log("Estudio editado: " + data);
+        });
+    return bodyEstudio;
+  }
+
 }

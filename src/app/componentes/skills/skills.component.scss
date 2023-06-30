@@ -7,7 +7,8 @@ h4, h6{
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, #38bd96, white);
+    background: linear-gradient(to left, #FC3232, #FC9A9A);
+    
 }
 
 #barras{
@@ -18,8 +19,10 @@ h4, h6{
 }
 
 #titulo{
-font-size:larger;
-color:black;
-text-shadow: greenyellow 2px 2px;
+    font-size:x-large;
+    color: #FC3232;
+    font-family: Verdana;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
 }
-

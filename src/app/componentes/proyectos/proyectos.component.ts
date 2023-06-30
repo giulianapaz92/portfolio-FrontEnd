@@ -44,6 +44,10 @@ export class ProyectosComponent {
   this.idProyecto = id;
  }
 
+ mostrarFormAgregar(){
+  this.mostrarForm = true;
+ }
+
  ocultarFormEditar(){
   this.mostrarForm = false;
   this.validacion = false;
@@ -58,6 +62,9 @@ export class ProyectosComponent {
     return;
   }
   this.ps.editar(id, nombre, descripcion)
+  window.location.reload();
+
+  this.ps.agregar(nombre, descripcion)
   window.location.reload();
 }
 

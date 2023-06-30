@@ -54,6 +54,10 @@ export class ExperienciaComponent {
     this.validacion = false;
   }
 
+  mostrarFormAgregar(){
+    this.mostrarForm = true;
+  }
+
   onSubmit(id: number){
     const empresa = this.expForm.value.empresa;
     const fechaDesde = this.expForm.value.fechaDesde;
@@ -66,6 +70,9 @@ export class ExperienciaComponent {
       return;
     }
     this.xs.editar(id, empresa, fechaDesde, fechaHasta, puesto, descripcion)
+    window.location.reload();
+
+    this.xs.agregar(empresa, fechaDesde, fechaHasta, puesto, descripcion)
     window.location.reload();
 
   }

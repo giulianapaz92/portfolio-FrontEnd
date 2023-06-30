@@ -52,6 +52,10 @@ export class EducacionComponent {
     this.validacion = false;
   }
 
+  mostrarFormAgregar(){
+    this.mostrarForm = true;
+  }
+
   async onSubmit(id: number){
     const nombre = this.eduForm.value.nombre;
     const estado = this.eduForm.value.estado;
@@ -65,6 +69,10 @@ export class EducacionComponent {
     }
     await this.es.editar(id, nombre, estado, fechaDesde, fechaHasta, titulo)
     window.location.reload();
+
+    await this.es.agregar(nombre, estado, fechaDesde, fechaHasta, titulo)
+    window.location.reload();
+    
   }
 
 

@@ -3,25 +3,29 @@
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, blueviolet, violet);
+    background: linear-gradient(to left, #0856C0, #8CB9F7);
 }
 
 #titulos{
-    font-size:larger;
-    color:black;
-    text-shadow:blueviolet 2px 2px;
-}
-
-#listas{
-    list-style-type:square;
+    font-size:x-large;
+    color: #000080;
+    font-family: Verdana;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
 }
 
 li::marker{
-    color: blueviolet;
+    color: #000080;
 }
 
 h4,h6,h1{
     display: inline;
+    font-family: Calibri;
+}
+
+h5{
+    font-family: Calibri;
 }
 
 button{

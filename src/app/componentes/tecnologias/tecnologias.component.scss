@@ -1,5 +1,6 @@
 h4,h5,h6, button{
     display: inline;
+    font-family: Calibri;
 }
 
 
@@ -8,14 +9,17 @@ h4,h5,h6, button{
     margin-right: 20px;
     margin-top: 20px;
     margin-bottom: 20px;
-    background: linear-gradient(to left, #FF8000, white);
+    background: linear-gradient(to left, #FF8000, #F8C471);
 }
 
 
 #titulos{
-    font-size:larger;
-    color:black;
-    text-shadow:orange 2px 2px;
+    font-size:x-large;
+    color:#FF8000;
+    font-family: Verdana;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: bolder;
 }
 
 #listas{
@@ -23,7 +27,7 @@ h4,h5,h6, button{
 }
 
 li::marker{
-    color: blueviolet;
+    color: #FF8000;
 }
 
 
@@ -31,10 +35,7 @@ li::marker{
     margin-bottom: 5px;
 }
 
-#editareliminar{
-    float: right;
-    margin-right: 5px;
-}
+
 
 ::placeholder {
     font-style: italic;
@@ -45,4 +46,9 @@ li{
     margin-bottom: 30px;
     margin-top: 15px;
 
+}
+
+button{
+    margin-left: 5px;
+    float:right;
 }
